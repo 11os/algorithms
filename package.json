@@ -1,0 +1,9 @@
+{
+  "name": "algorithms",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/11os/algorithms.git",
+  "author": "11",
+  "license": "MIT"
+}

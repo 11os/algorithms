@@ -1,0 +1,15 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/data-sctruct/linked-list/LinkedList.spec.js",
+      "runtimeExecutable": "/Users/haozhong/.nvm/versions/node/v15.11.0/bin/node"
+    }
+  ]
+}
