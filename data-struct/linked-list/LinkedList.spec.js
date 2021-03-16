@@ -17,3 +17,11 @@ console.log("e:5");
 linkedList.delete("e");
 console.log(linkedList.toArray());
 console.log(["c:3", "a:1", "b:2", "d:4"]);
+
+const fromArrayList = new LinkedList().fromArray(["s:1", "r:2", "g:3"]);
+console.log(fromArrayList.toArray());
+console.log(["s:1", "r:2", "g:3"]);
+
+const head = fromArrayList.deleteHead();
+console.log(fromArrayList.toArray());
+console.log(["r:2", "g:3"]);

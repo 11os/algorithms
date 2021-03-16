@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/11os/algorithms.git",
   "author": "11",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "node ./data-struct/linked-list/LinkedList.spec.js"
+  }
 }

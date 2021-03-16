@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}/data-sctruct/linked-list/LinkedList.spec.js",
+      "program": "${workspaceFolder}/data-struct/linked-list/LinkedList.spec.js",
       "runtimeExecutable": "/Users/haozhong/.nvm/versions/node/v15.11.0/bin/node"
     }
   ]

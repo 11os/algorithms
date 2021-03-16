@@ -56,11 +56,22 @@ export default class LinkedList {
     this.tail = newNode;
     return this;
   }
+  deleteHead() {
+    if (!this.head) return null;
+    let cursorNode = this.head;
+    if (this.head.next) {
+      this.head = this.head.next;
+      return cursorNode;
+    }
+    this.head = null;
+    this.tail = null;
+    return cursorNode;
+  }
   delete(key) {
     if (!this.head) return null;
     let cursorNode = this.head;
     if (cursorNode.key === key) {
-      this.head = this.next;
+      this.head = this.head.next;
       return cursorNode;
     }
     while (cursorNode) {
@@ -73,6 +84,12 @@ export default class LinkedList {
       cursorNode = cursorNode.next;
     }
     return null;
+  }
+  fromArray(array) {
+    array.forEach((item) =>
+      this.append(item.split(":")[0], item.split(":")[1])
+    );
+    return this;
   }
   toArray() {
     if (!this.head) return [];
