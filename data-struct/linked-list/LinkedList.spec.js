@@ -1,27 +1,44 @@
 import LinkedList from "./LinkedList.js";
 
-const linkedList = new LinkedList();
-linkedList
-  .append("a", "1")
-  .append("b", "2")
-  .prepend("c", "3")
-  .append("d", "4")
-  .append("e", "5");
-console.log(linkedList.toArray());
-console.log(["c:3", "a:1", "b:2", "d:4", "e:5"]);
+function buildLinkedList() {
+  return new LinkedList()
+    .append("a", "1")
+    .append("b", "2")
+    .prepend("c", "3")
+    .append("d", "4")
+    .append("e", "5");
+}
 
-const e = linkedList.get("e");
-console.log(e.toString());
-console.log("e:5");
+test("append", () => {
+  const linkedList = buildLinkedList();
+  expect(linkedList.toArray()).toStrictEqual([
+    "c:3",
+    "a:1",
+    "b:2",
+    "d:4",
+    "e:5",
+  ]);
+});
 
-linkedList.delete("e");
-console.log(linkedList.toArray());
-console.log(["c:3", "a:1", "b:2", "d:4"]);
+test("get", () => {
+  const linkedList = buildLinkedList();
+  const e = linkedList.get("e");
+  expect(e.toString()).toBe("e:5");
+});
 
-const fromArrayList = new LinkedList().fromArray(["s:1", "r:2", "g:3"]);
-console.log(fromArrayList.toArray());
-console.log(["s:1", "r:2", "g:3"]);
+test("delete", () => {
+  const linkedList = buildLinkedList();
+  linkedList.delete("e");
+  expect(linkedList.toArray()).toStrictEqual(["c:3", "a:1", "b:2", "d:4"]);
+});
 
-const head = fromArrayList.deleteHead();
-console.log(fromArrayList.toArray());
-console.log(["r:2", "g:3"]);
+test("deleteHead", () => {
+  const linkedList = buildLinkedList();
+  linkedList.deleteHead();
+  expect(linkedList.toArray()).toStrictEqual(["a:1", "b:2", "d:4", "e:5"]);
+});
+
+test("fromArray", () => {
+  const fromArrayList = new LinkedList().fromArray(["s:1", "r:2", "g:3"]);
+  expect(fromArrayList.toArray()).toStrictEqual(["s:1", "r:2", "g:3"]);
+});

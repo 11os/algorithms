@@ -7,6 +7,9 @@
   "author": "11",
   "license": "MIT",
   "scripts": {
-    "test": "node ./data-struct/linked-list/LinkedList.spec.js"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
   }
 }
